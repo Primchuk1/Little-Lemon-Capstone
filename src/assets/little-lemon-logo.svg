@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 110" role="img" aria-labelledby="title">
+  <title id="title">Little Lemon</title>
+  <g transform="translate(8 10)">
+    <path fill="#f4ce14" d="M45 10c24 0 43 18 43 40S69 90 45 90C27 90 12 80 5 65 20 64 29 55 29 43S20 22 5 20C14 14 29 10 45 10Z"/>
+    <path fill="#495e57" d="M44 10C48-1 61-6 72 2 64 13 54 17 44 10Z"/>
+    <circle cx="58" cy="39" r="3" fill="#495e57"/>
+    <circle cx="69" cy="51" r="3" fill="#495e57"/>
+    <circle cx="53" cy="62" r="3" fill="#495e57"/>
+  </g>
+  <text x="110" y="50" fill="#495e57" font-family="Arial, sans-serif" font-size="38" font-weight="700">LITTLE</text>
+  <text x="110" y="91" fill="#495e57" font-family="Arial, sans-serif" font-size="38" font-weight="700">LEMON</text>
+</svg>

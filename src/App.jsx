@@ -1,15 +1,18 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
+import Footer from './Footer'
+import Header from './Header'
+import Main from './MainContent'
+import Nav from './Nav'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-    Homepage
+      <div className="topbar page-width">
+        <Header />
+        <Nav />
+      </div>
+      <Main />
+      <Footer />
     </>
   )
 }
