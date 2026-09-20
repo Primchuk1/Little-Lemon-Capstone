@@ -1,4 +1,4 @@
-import logo from './assets/little-lemon-logo.svg'
+import logo from '../assets/little-lemon-logo.svg'
 
 function Header() {
   return (
