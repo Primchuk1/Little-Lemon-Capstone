@@ -12,6 +12,7 @@ function App() {
       <Route path="/reservations" element={<BookingPage />} />
       <Route path="/booking-confirmation" element={<BookingConfirmationPage />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/reservations" element={<BookingPage />} />
     </Routes>
   )
 }

@@ -329,7 +329,127 @@
   text-align: center;
 }
 
+.booking-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 60px;
+  padding-block: 85px;
+}
+
+.booking-eyebrow {
+  color: var(--green);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.booking-intro h2 {
+  margin: 12px 0 20px;
+  color: var(--green);
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.booking-intro > p:last-child {
+  max-width: 38ch;
+}
+
+.booking-form {
+  min-width: 0;
+  padding: 32px;
+  border-radius: 16px;
+  border-top: 6px solid var(--yellow);
+  background: var(--light);
+}
+
+.booking-form__note,
+.booking-form__hint {
+  color: #555;
+  font-size: 0.875rem;
+}
+
+.booking-form__note {
+  margin: 0 0 24px;
+}
+
+.booking-form fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0 0 28px;
+  border: 0;
+}
+
+.booking-form legend {
+  margin-bottom: 18px;
+  padding: 0;
+  color: var(--green);
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.booking-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.booking-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.booking-form label {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px;
+  border: 1px solid #788780;
+  border-radius: 8px;
+  color: var(--dark);
+  background: #fff;
+  font: inherit;
+}
+
+.booking-form input:focus-visible,
+.booking-form select:focus-visible,
+.booking-form button:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+
+.booking-form__submit {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 0;
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.booking-form__status {
+  margin: 20px 0 0;
+  padding: 16px;
+  border-left: 4px solid var(--green);
+  background: #fff;
+}
+
 @media (max-width: 800px) {
+  .booking-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-block: 45px;
+  }
   .topbar {
     flex-direction: column;
     padding-block: 18px;
@@ -362,6 +482,14 @@
 }
 
 @media (max-width: 520px) {
+  .booking-form {
+    padding: 24px 18px;
+  }
+
+  .booking-form__grid {
+    grid-template-columns: 1fr;
+  }
+
   .hero-section__layout,
   .card-grid,
   .testimonial-grid,
