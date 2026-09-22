@@ -6,13 +6,12 @@ import Header from '../Components/Header'
 import Hero from '../Components/Hero'
 import Nav from '../Components/Nav'
 
-function initializeTimes(date) {
-    // Simulate fetching available times based on the selected date
-    // For simplicity, we'll return a static list of times for any date
+export function initializeTimes(date) {
     return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
 }
 
-function updateTimes(state, action) {
+
+export function updateTimes(state, action) {
     switch (action.type) {
         case "UPDATE_TIMES":
             return initializeTimes(action.date);
