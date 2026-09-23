@@ -1,15 +1,19 @@
 import { useState } from "react";
 
-function BookingForm({ availableTimes, dispatch }) {
+function BookingForm({ availableTimes, dispatch, submitForm }) {
+
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState("Birthday");
+    const [error, setError] = useState("");
 
     const handleDateChange = (e) => {
         const selectedDate = e.target.value;
 
         setDate(selectedDate);
+        setTime("");
+        setError("");
 
         dispatch({
             type: "UPDATE_TIMES",
@@ -27,8 +31,18 @@ function BookingForm({ availableTimes, dispatch }) {
             occasion,
         };
 
-        console.log(formData);
-    };
+        if (!date || !availableTimes.includes(time)) {
+            setError("Please choose an available date and time.");
+            return;
+        }
+
+        if (submitForm(formData) === false) {
+            setError("This time could not be booked. Please choose another available time.");
+        }
+    }
+
+
+
 
     return (
         <section className="booking-section page-width" aria-labelledby="booking-title">
@@ -46,6 +60,7 @@ function BookingForm({ availableTimes, dispatch }) {
                             <input
                                 type="date"
                                 id="res-date"
+                                required
                                 value={date}
                                 onChange={handleDateChange}
                             />
@@ -55,6 +70,8 @@ function BookingForm({ availableTimes, dispatch }) {
                             <label htmlFor="res-time">Choose time</label>
                             <select
                                 id="res-time"
+                                required
+                                disabled={!date || availableTimes.length === 0}
                                 value={time}
                                 onChange={(e) => setTime(e.target.value)}
                             >
@@ -68,6 +85,9 @@ function BookingForm({ availableTimes, dispatch }) {
                                     </option>
                                 ))}
                             </select>
+                            {date && availableTimes.length === 0 && (
+                                <span className="booking-form__hint" role="status">No times available. Please choose another date.</span>
+                            )}
 
                         </div>
                         <div className="booking-form__field">
@@ -96,12 +116,12 @@ function BookingForm({ availableTimes, dispatch }) {
                         </div>
                     </div>
                 </fieldset>
+                {error && <p role="alert">{error}</p>}
                 <button className="button booking-form__submit" type="submit">
                     Make Your Reservation
                 </button>
             </form>
         </section>
     );
-}
-
+};
 export default BookingForm;

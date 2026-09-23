@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import SpecialsCard from "./SpecialsCard";
 
 function SpecialsSection() {
@@ -11,7 +12,7 @@ function SpecialsSection() {
         <section className="specials page-width" aria-labelledby="specials-title">
             <div className="section-heading">
                 <h2 id="specials-title">Specials</h2>
-                <a className="button" href="/menu">Online Menu</a>
+                <Link className="button" to="/menu">Online Menu</Link>
             </div>
             <div className="card-grid">
                 {specials.map((special) => (
