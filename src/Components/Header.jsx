@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
-import logo from '../assets/little-lemon-logo.svg'
 
 function Header() {
   return (
     <header className="brand">
       <Link className="brand__link" to="/" aria-label="Little Lemon home">
-        <img className="brand__logo" src={logo} alt="Little Lemon" />
+        <img className="brand__logo" src="/images/logo-horizontal.png" alt="Little Lemon" width="2000" height="546" />
       </Link>
     </header>
   )

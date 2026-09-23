@@ -1,11 +1,14 @@
 import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useReducer } from "react";
+import { validateBooking } from "./bookingValidation";
 
 import HomePage from "./Pages/HomePage";
 import BookingPage from "./Pages/BookingPage";
 import BookingConfirmationPage from "./Pages/BookingConfirmationPage";
 import AboutPage from "./Pages/AboutPage";
+import MenuPage from "./Pages/MenuPage";
+import OrderOnlinePage from "./Pages/OrderOnlinePage";
 
 const seededRandom = function (seed) {
   const m = 2 ** 35 - 31;
@@ -107,7 +110,7 @@ function App() {
   );
 
   const submitForm = (formData) => {
-    if (!formData.date || !fetchAPI(formData.date).includes(formData.time) ||
+    if (Object.keys(validateBooking(formData, fetchAPI(formData.date))).length > 0 ||
       bookingState.reservations.some(
         ({ date, time }) => date === formData.date && time === formData.time
       )) return false;
@@ -157,6 +160,8 @@ function App() {
         path="/about"
         element={<AboutPage />}
       />
+      <Route path="/menu" element={<MenuPage />} />
+      <Route path="/order-online" element={<OrderOnlinePage />} />
     </Routes>
   );
 }

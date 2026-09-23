@@ -10,7 +10,7 @@ function Hero() {
                         <p>We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
                         <Link className="button" to="/reservations">Reserve a Table</Link>
                     </div>
-                    <div className="image-placeholder image-placeholder--hero" role="img" aria-label="Restaurant food presentation placeholder" />
+                    <img className="hero-section__image" src="/images/mediterranean-table.jpg" alt="Mediterranean dishes served for sharing around a table" width="1000" height="667" fetchPriority="high" />
                 </div>
             </section>
         </>

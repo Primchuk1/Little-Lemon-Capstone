@@ -3,9 +3,9 @@ import SpecialsCard from "./SpecialsCard";
 
 function SpecialsSection() {
     const specials = [
-        { name: 'Greek salad', price: '$12.99', description: 'The famous Greek salad of crispy lettuce, peppers, olives and our Chicago-style feta cheese.' },
-        { name: 'Bruschetta', price: '$5.99', description: 'Our bruschetta is made from grilled bread rubbed with garlic and topped with fresh tomatoes.' },
-        { name: 'Lemon dessert', price: '$5.00', description: 'This dessert comes straight from grandma’s recipe book and has an authentic lemon flavor.' },
+        { name: 'Greek salad', price: '$12.99', description: 'The famous Greek salad of crispy lettuce, peppers, olives and our Chicago-style feta cheese.', imageSrc: '/images/greek-salad.jpg', imageAlt: 'Greek salad with feta, tomatoes, olives, and crisp lettuce' },
+        { name: 'Bruschetta', price: '$5.99', description: 'Our bruschetta is made from grilled bread rubbed with garlic and topped with fresh tomatoes.', imageSrc: '/images/bruschetta.jpg', imageAlt: 'Toasted bread topped with tomato slices and fresh basil' },
+        { name: 'Lemon dessert', price: '$5.00', description: 'Inspired by grandma\'s recipe book, our lemon dessert is a bright and refreshing finish to your meal.', imageSrc: '/images/lemon-cake.jpg', imageAlt: 'Golden lemon cake served with fresh lemon slices' },
     ]
 
     return (
@@ -21,6 +21,8 @@ function SpecialsSection() {
                         title={special.name}
                         price={special.price}
                         description={special.description}
+                        imageSrc={special.imageSrc}
+                        imageAlt={special.imageAlt}
                     />
                 ))}
             </div>
